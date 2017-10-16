@@ -1,5 +1,10 @@
 # rbf_tests
 
+Adding RBF layer to learned deep learning model to prevent its
+vulnerability to adversarial examples.
+
+See [RBF_layer_to_prevent_adversarial.ipynb](https://github.com/PetraVidnerova/rbf_tests/blob/master/RBF_layer_to_prevent_adversarial.ipynb) for example.
+
 ## mnist_add_rbf 
 
 Test of adding RBF layer to learned model. Requires [rbf_keras](https://github.com/PetraVidnerova/rbf_keras).
