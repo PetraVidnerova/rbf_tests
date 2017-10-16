@@ -101,12 +101,12 @@ if __name__ == "__main__":
     # save new model to file 
     name = output_model_name
     json_string = newmodel.to_json()
-    open("model/{}.json".format(name),"w").write(json_string) 
-    newmodel.save_weights("model/{}_weights.h5".format(name))
+    open("models/{}.json".format(name),"w").write(json_string) 
+    newmodel.save_weights("models/{}_weights.h5".format(name))
 
     print("---test----")
-    m = model_from_json(open("model/{}.json".format(name)).read(), {'RBFLayer':RBFLayer})
-    m.load_weights("model/{}_weights.h5".format(name))
+    m = model_from_json(open("models/{}.json".format(name)).read(), {'RBFLayer':RBFLayer})
+    m.load_weights("models/{}_weights.h5".format(name))
 
     Y_pred = m.predict(X_test)
     print("Test Accuracy: ", accuracy_score(Y_pred, Y_test)) 
