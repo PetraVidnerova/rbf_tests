@@ -53,6 +53,8 @@ Average accuracy on legitimate data set:   98.19
 
 Average accuracy on adversarial data set:  89.21
 
+Average accuracy on adversarial data set seems to depend on widths of RBF units. Overview of accuracies of models with various initial widths:
+
 ![alt text](fig/mlp_accuracies.png "MLP accuracies")
 
 
