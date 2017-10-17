@@ -39,3 +39,26 @@ optional arguments:
   -h, --help  show this help message and exit
   --cnn       cnn type network (2d input)	
 ```
+
+## Results
+(average errors from 30 runs)
+
+### MLP
+Average accuracy on legitimate data set:   98.35
+Average accuracy on adversarial data set:   1.95
+
+### MLP+RBF
+Average accuracy on legitimate data set:   98.19
+Average accuracy on adversarial data set:  89.21
+
+![alt text](fig/mlp_accuracies.png "MLP accuracies")
+
+
+### CNN
+Average accuracy on legitimate data set:   98.97
+Average accuracy on adversarial data set:   8.49
+
+### CNN+RBF
+Average accuracy on legitimate data set:   
+Average accuracy on adversarial data set:  
+
