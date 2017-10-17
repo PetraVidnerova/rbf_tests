@@ -20,7 +20,11 @@ import matplotlib.pyplot as plt
 
 
 def eval(model_name, X_train, Y_train, X_test, Y_test, cnn=False):
-
+    """ Load model saved in model_name.json and model_name_weights.h5 and 
+    evaluate its accuracy on legitimate test samples and adversarial samples.
+    Use cnn=True if the model is CNN based.
+    """
+    
     if not hasattr(backend, "theano"):
         raise RuntimeError("Requires keras to be configured"
                            " to use the Theano backend.")

@@ -21,6 +21,10 @@ def accuracy_score(y1, y2):
     
 
 def add_rbf_layer(model, betas, X_train, Y_train, X_test, Y_test):
+    """ Create a new model as a copy of model + RBF network. Train 
+    it on [X_train, Y_train], reports its test accuracy and returns 
+    the new model.
+    """
     
     newmodel = Sequential() 
     for i in range(len(model.layers)):
