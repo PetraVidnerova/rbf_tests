@@ -64,6 +64,7 @@ Average accuracy on legitimate data set:   98.97
 Average accuracy on adversarial data set:   8.49 
 
 ### CNN+RBF
-Average accuracy on legitimate data set:   
-Average accuracy on adversarial data set:  
+Average accuracy on legitimate data set:   98.85
+Average accuracy on adversarial data set:  74.57
 
+![alt text](fig/cnn_accuracies.png "CNN accuracies")
