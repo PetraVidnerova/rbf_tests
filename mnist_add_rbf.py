@@ -1,5 +1,5 @@
 import numpy as np
-from keras.models import Sequential, model_from_json
+from keras.models import Sequential, load_model
 from keras.layers.core import Dense, Activation, Dropout
 from keras.layers import Convolution2D, MaxPooling2D, Flatten
 from keras.layers.normalization import BatchNormalization
@@ -95,22 +95,16 @@ if __name__ == "__main__":
     Y_test = np_utils.to_categorical(y_test, 10)
 
     # load model from file
-    with open("models/{}.json".format(input_model_name)) as f:
-        model = model_from_json(f.read()) 
-    model.load_weights("models/{}_weights.h5".format(input_model_name)) 
+    model = load_model("models/{}.h5".format(input_model_name))
 
     # create and learn new model 
     newmodel = add_rbf_layer(model, betas, X_train, Y_train, X_test, Y_test)
 
     # save new model to file 
-    name = output_model_name
-    json_string = newmodel.to_json()
-    open("models/{}.json".format(name),"w").write(json_string) 
-    newmodel.save_weights("models/{}_weights.h5".format(name))
+    newmodel.save("models/{}.h5".format(output_model_name))
 
     print("---test----")
-    m = model_from_json(open("models/{}.json".format(name)).read(), {'RBFLayer':RBFLayer})
-    m.load_weights("models/{}_weights.h5".format(name))
+    m = load_model("models/{}.h5".format(output_model_name), custom_objects={'RBFLayer': RBFLayer})
 
     Y_pred = m.predict(X_test)
     print("Test Accuracy: ", accuracy_score(Y_pred, Y_test)) 
